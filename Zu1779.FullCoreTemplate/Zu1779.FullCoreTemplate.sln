@@ -7,7 +7,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Business", "Business", "{03
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Contract", "Contract", "{7989F7C3-C31D-43E3-AD54-9F595F602D18}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Server", "Server", "{6238A0D8-9D30-4AD7-A955-619D00465641}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Service", "Service", "{6238A0D8-9D30-4AD7-A955-619D00465641}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{20F5DDCC-7EAF-4819-8F31-BA01746B869E}"
 EndProject
@@ -20,9 +20,24 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zu1779.FCT.Service.MainServiceAPI", "Service\Zu1779.FCT.Service.MainServiceAPI\Zu1779.FCT.Service.MainServiceAPI.csproj", "{BEA73581-A3EE-4CCF-B5DA-31943F360E19}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BEA73581-A3EE-4CCF-B5DA-31943F360E19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEA73581-A3EE-4CCF-B5DA-31943F360E19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEA73581-A3EE-4CCF-B5DA-31943F360E19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEA73581-A3EE-4CCF-B5DA-31943F360E19}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BEA73581-A3EE-4CCF-B5DA-31943F360E19} = {6238A0D8-9D30-4AD7-A955-619D00465641}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2271A283-232F-4EA1-9B0B-90F441851398}
