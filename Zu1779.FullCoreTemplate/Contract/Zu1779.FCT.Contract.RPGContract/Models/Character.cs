@@ -4,11 +4,25 @@
     using System.Collections.Generic;
 
     /// <summary>
-    /// Represent a character on Star Wars second edition
+    /// Represent a character on Star Wars rpg
     /// </summary>
     public class Character
     {
         public Guid Id { get; set; }
+
+        #region Abilities
+        public IDictionary<AbilityEnum, byte> Abilities { get; set; } = new Dictionary<AbilityEnum, byte>();
+        public byte Strength { get; set; }
+        public byte Dexterity { get; set; }
+        public byte Constitution { get; set; }
+        public byte Intelligence { get; set; }
+        public byte Wisdom { get; set; }
+        public byte Charisma { get; set; }
+        #endregion
+
+
+
+
 
         public string Name { get; set; }
 
@@ -45,13 +59,7 @@
         public IList<CharacterCorrelation> CharacterCorrelation { get; set; }
 
         #region Features
-        public byte Dexterity { get; set; }
 
-        public byte Knowledge { get; set; }
-
-        public byte Mechanics { get; set; }
-
-        public byte Intuition { get; set; }
         #endregion
 
         /// <summary>Meters per round.</summary>
