@@ -5,8 +5,12 @@
     using System.Reflection;
     using System.Text;
 
+    using Models;
+
     public interface ICharacterEngine
     {
         AssemblyName GetVersion();
+
+        Character GenerateCharacter();
     }
 }

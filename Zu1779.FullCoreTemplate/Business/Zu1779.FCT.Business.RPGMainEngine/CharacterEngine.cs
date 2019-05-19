@@ -10,5 +10,7 @@
     public class CharacterEngine : ICharacterEngine
     {
         public AssemblyName GetVersion() => Assembly.GetExecutingAssembly().GetName();
+
+
     }
 }

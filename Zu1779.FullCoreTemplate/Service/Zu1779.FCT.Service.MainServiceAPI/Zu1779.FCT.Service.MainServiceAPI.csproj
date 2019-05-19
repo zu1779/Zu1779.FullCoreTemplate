@@ -17,4 +17,16 @@
     <ProjectReference Include="..\..\Contract\Zu1779.FCT.Contract.RPGContract\Zu1779.FCT.Contract.RPGContract.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="NLog.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="NLog.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+
 </Project>
