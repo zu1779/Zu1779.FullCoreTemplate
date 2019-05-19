@@ -6,7 +6,7 @@
     using Zu1779.FCT.Contract.RPGContract;
     public class RNG : IRNG
     {
-        private static Random rng = new Random();
+        private static readonly Random rng = new Random();
 
         public int Dice(byte dice = 6, int diceNumber = 1, int discardLessNumber = 0)
         {

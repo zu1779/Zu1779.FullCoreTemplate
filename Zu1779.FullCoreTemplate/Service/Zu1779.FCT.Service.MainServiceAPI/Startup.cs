@@ -16,13 +16,10 @@
         {
             container.RegisterFrom<CompositionRoot>();
         }
+
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
-
+            var rootPath = env.ContentRootPath;
             app.UseErrorHandlingMiddleware();
             app.UseMvc(c =>
             {

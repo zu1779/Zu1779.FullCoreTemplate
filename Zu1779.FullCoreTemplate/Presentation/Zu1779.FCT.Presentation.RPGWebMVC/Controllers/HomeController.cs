@@ -1,13 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Zu1779.FCT.Presentation.RPGWebMVC.Models;
-
-namespace Zu1779.FCT.Presentation.RPGWebMVC.Controllers
+﻿namespace Zu1779.FCT.Presentation.RPGWebMVC.Controllers
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Diagnostics;
+    using System.Linq;
+    using System.Threading.Tasks;
+    using Microsoft.AspNetCore.Mvc;
+
+    using Zu1779.FCT.Presentation.RPGWebMVC.Models;
+
     public class HomeController : Controller
     {
         public IActionResult Index()
