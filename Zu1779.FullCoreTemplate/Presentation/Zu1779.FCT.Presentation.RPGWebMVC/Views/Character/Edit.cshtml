@@ -1,0 +1,72 @@
+﻿@model CharacterModel
+@{
+    string title = Model.Id.HasValue ? "Edit" : "New";
+    ViewData["Title"] = title;
+}
+
+<h1>Character</h1>
+
+<div class="card">
+    <h5 class="card-header">Identification</h5>
+    <div class="card-body">
+        <dl>
+            <dt>Id</dt>
+            <dd>@(Model.Id?.ToString() ?? "Not set")</dd>
+        </dl>
+    </div>
+</div>
+<div class="card">
+    <h5 class="card-header">Abilities</h5>
+    <div class="card-body row">
+        <div class="col-9">
+            @{
+                var assignRandom = "Assign last random number";
+                var strenghtTitle = Model.Strength >= 1 ? "Remove Strenght" : assignRandom;
+            }
+            <button type="button" class="btn btn-primary" title="@strenghtTitle">
+                Strength <span class="badge badge-light">@Model.Strength</span>
+            </button>
+            @{
+                var dexterityTitle = Model.Dexterity >= 1 ? "Remove Dexterity" : assignRandom;
+            }
+            <button type="button" class="btn btn-primary" title="@dexterityTitle">
+                Dexterity <span class="badge badge-light">@Model.Dexterity</span>
+            </button>
+            @{
+                var constitutionTitle = Model.Constitution >= 1 ? "Remove Constitution" : assignRandom;
+            }
+            <button type="button" class="btn btn-primary" title="@constitutionTitle">
+                Constitution <span class="badge badge-light">@Model.Constitution</span>
+            </button>
+            @{
+                var intelligenceTitle = Model.Intelligence >= 1 ? "Remove Intelligence" : assignRandom;
+            }
+            <button type="button" class="btn btn-primary" title="@intelligenceTitle">
+                Intelligence <span class="badge badge-light">@Model.Intelligence</span>
+            </button>
+            @{
+                var wisdomTitle = Model.Intelligence >= 1 ? "Remove Wisdom" : assignRandom;
+            }
+            <button type="button" class="btn btn-primary" title="@wisdomTitle">
+                Wisdom <span class="badge badge-light">@Model.Wisdom</span>
+            </button>
+            @{ 
+                var charismaTitle = Model.Charisma >= 1 ? "Remove Charisma" : assignRandom;
+            }
+            <button type="button" class="btn btn-primary" title="@charismaTitle">
+                Charisma <span class="badge badge-light">@Model.Charisma</span>
+            </button>
+        </div>
+        <div class="col-3">
+            <h6>Random numbers</h6>
+            <ol>
+                @foreach (var randomNumber in Model.RandomNumber)
+                {
+                    <li>
+                        @randomNumber
+                    </li>
+                }
+            </ol>
+        </div>
+    </div>
+</div>

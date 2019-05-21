@@ -18,11 +18,8 @@
 
         public AssemblyName GetVersion() => Assembly.GetExecutingAssembly().GetName();
 
-        public Character GenerateCharacter()
-        {
-            return new Character();
-        }
+        public Character GenerateCharacter() => new Character();
 
-        
+        public byte GenerateRandomAbility() => (byte)rng.D6(4, 1);
     }
 }

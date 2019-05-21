@@ -15,6 +15,7 @@
         public void Compose(IServiceRegistry serviceRegistry)
         {
             serviceRegistry.Register<ICharacterEngine, CharacterEngine>(new PerScopeLifetime());
+            serviceRegistry.Register<IRNG, RNG>(new PerScopeLifetime());
         }
     }
 }

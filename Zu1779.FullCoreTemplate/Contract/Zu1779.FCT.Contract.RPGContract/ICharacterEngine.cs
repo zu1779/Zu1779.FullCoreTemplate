@@ -12,5 +12,7 @@
         AssemblyName GetVersion();
 
         Character GenerateCharacter();
+
+        byte GenerateRandomAbility();
     }
 }
