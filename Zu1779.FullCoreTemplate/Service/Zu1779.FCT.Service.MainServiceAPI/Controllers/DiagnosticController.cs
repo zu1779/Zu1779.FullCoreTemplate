@@ -12,6 +12,8 @@
 
     using Zu1779.FCT.Contract.RPGContract;
 
+    [ApiController]
+    [Route("api/diagnostic")]
     public class DiagnosticController : ControllerBase
     {
         public DiagnosticController(ICharacterEngine characterEngine, ILogger<DiagnosticController> logger)
@@ -26,6 +28,7 @@
         /// Get the version of the hosting api.
         /// </summary>
         [HttpGet]
+        [Route("getversion")]
         public JsonResult GetVersion()
         {
             var assemblyName = Assembly.GetExecutingAssembly().GetName();
@@ -38,6 +41,7 @@
         /// Get the version of the Rpg Engine.
         /// </summary>
         [HttpGet]
+        [Route("getrpgversion")]
         public JsonResult GetRpgVersion() => new JsonResult(characterEngine.GetVersion());
     }
 }

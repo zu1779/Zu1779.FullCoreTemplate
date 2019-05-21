@@ -16,6 +16,11 @@
 
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Client\Zu1779.FCT.Client.RPGClient\Zu1779.FCT.Client.RPGClient.csproj" />
+  </ItemGroup>
+
+
+  <ItemGroup>
     <Content Update="NLog.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
