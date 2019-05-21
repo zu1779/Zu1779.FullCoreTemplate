@@ -22,6 +22,10 @@
         private readonly ICharacterEngine characterEngine;
         private readonly ILogger<DiagnosticController> logger;
 
+        /// <summary>
+        /// Get the version of the hosting api.
+        /// </summary>
+        [HttpGet]
         public JsonResult GetVersion()
         {
             var assemblyName = Assembly.GetExecutingAssembly().GetName();
@@ -30,6 +34,10 @@
             return response;
         }
 
+        /// <summary>
+        /// Get the version of the Rpg Engine.
+        /// </summary>
+        [HttpGet]
         public JsonResult GetRpgVersion() => new JsonResult(characterEngine.GetVersion());
     }
 }
