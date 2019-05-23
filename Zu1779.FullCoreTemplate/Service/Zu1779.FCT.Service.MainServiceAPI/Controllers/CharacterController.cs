@@ -28,6 +28,11 @@
             return characterEngine.GenerateRandomAbility();
         }
 
+        /// <summary>
+        /// Generate some random abilities.
+        /// </summary>
+        /// <param name="numberOfAbilities">Number of random abilities to generate.</param>
+        /// <returns></returns>
         [HttpGet]
         [Route("randomabilities")]
         public List<byte> RandomAbilities(byte numberOfAbilities = 6)
