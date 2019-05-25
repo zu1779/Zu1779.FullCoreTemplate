@@ -4,6 +4,13 @@
     ViewData["Title"] = title;
 }
 
+<style>
+    button {
+        margin-top: 2px;
+        margin-bottom: 2px;
+    }
+</style>
+
 <h1>Character</h1>
 
 <div class="card">
@@ -20,46 +27,26 @@
     <div class="card-body row">
         <div class="col-7">
             @{
-                var assignRandom = "Assign last random number";
-                var strenghtTitle = Model.Strength >= 1 ? "Remove Strenght" : assignRandom;
+                var abilities = Enum.GetValues(typeof(cntm.AbilityEnum)).Cast<cntm.AbilityEnum>().Where(c => c != cntm.AbilityEnum.None)
+                    .Select(c => new { value = c, text = c.ToString() });
+                foreach (var ability in abilities)
+                {
+                    var abilityTitle = Model.Strength >= 1 ? $"Remove {ability}" : "Assign last random number";
+                    var abilityValue = Model.GetType().GetProperty(ability.text).GetValue(Model);
+                    var strModel = JsonConvert.SerializeObject(Model);
+                    <form method="post" asp-action="SetAbility" asp-route-ability="@abilityValue"
+                          enctype="text/plain" style="display: inline;">
+                        <input type="hidden" name="model" asp-for="@strModel" />
+                        <button type="submit" class="btn btn-primary" title="@abilityTitle">
+                            @ability.text <span class="badge badge-light">@abilityValue</span>
+                        </button>
+                    </form>
+                }
             }
-            <button type="button" class="btn btn-primary" title="@strenghtTitle">
-                Strength <span class="badge badge-light">@Model.Strength</span>
-            </button>
-            @{
-                var dexterityTitle = Model.Dexterity >= 1 ? "Remove Dexterity" : assignRandom;
-            }
-            <button type="button" class="btn btn-primary" title="@dexterityTitle">
-                Dexterity <span class="badge badge-light">@Model.Dexterity</span>
-            </button>
-            @{
-                var constitutionTitle = Model.Constitution >= 1 ? "Remove Constitution" : assignRandom;
-            }
-            <button type="button" class="btn btn-primary" title="@constitutionTitle">
-                Constitution <span class="badge badge-light">@Model.Constitution</span>
-            </button>
-            @{
-                var intelligenceTitle = Model.Intelligence >= 1 ? "Remove Intelligence" : assignRandom;
-            }
-            <button type="button" class="btn btn-primary" title="@intelligenceTitle">
-                Intelligence <span class="badge badge-light">@Model.Intelligence</span>
-            </button>
-            @{
-                var wisdomTitle = Model.Intelligence >= 1 ? "Remove Wisdom" : assignRandom;
-            }
-            <button type="button" class="btn btn-primary" title="@wisdomTitle">
-                Wisdom <span class="badge badge-light">@Model.Wisdom</span>
-            </button>
-            @{ 
-                var charismaTitle = Model.Charisma >= 1 ? "Remove Charisma" : assignRandom;
-            }
-            <button type="button" class="btn btn-primary" title="@charismaTitle">
-                Charisma <span class="badge badge-light">@Model.Charisma</span>
-            </button>
         </div>
         <div class="col-5">
-            <button class="btn btn-primary my-1">Regenerate random</button>
-            <button class="btn btn-primary my-1">Regenerate random with cap</button>
+            <button class="btn btn-primary">Regenerate random</button>
+            <button class="btn btn-primary">Regenerate random with cap</button>
             <h6>Random numbers</h6>
             <ol>
                 @foreach (var randomNumber in Model.RandomNumber)

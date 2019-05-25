@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Client\Zu1779.FCT.Client.RPGClient\Zu1779.FCT.Client.RPGClient.csproj" />
+    <ProjectReference Include="..\..\Contract\Zu1779.FCT.Contract.RPGContract\Zu1779.FCT.Contract.RPGContract.csproj" />
   </ItemGroup>
 
 
