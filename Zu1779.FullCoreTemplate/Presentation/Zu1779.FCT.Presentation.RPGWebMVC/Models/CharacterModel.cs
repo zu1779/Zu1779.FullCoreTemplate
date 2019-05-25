@@ -16,6 +16,6 @@
         public byte Charisma { get; set; }
         #endregion
 
-        public List<byte> RandomNumber { get; set; }
+        public Queue<byte> RandomNumber { get; set; }
     }
 }

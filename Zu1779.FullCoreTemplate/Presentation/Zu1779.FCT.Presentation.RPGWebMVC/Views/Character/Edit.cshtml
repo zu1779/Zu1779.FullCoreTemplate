@@ -18,7 +18,7 @@
 <div class="card">
     <h5 class="card-header">Abilities</h5>
     <div class="card-body row">
-        <div class="col-9">
+        <div class="col-7">
             @{
                 var assignRandom = "Assign last random number";
                 var strenghtTitle = Model.Strength >= 1 ? "Remove Strenght" : assignRandom;
@@ -57,7 +57,9 @@
                 Charisma <span class="badge badge-light">@Model.Charisma</span>
             </button>
         </div>
-        <div class="col-3">
+        <div class="col-5">
+            <button class="btn btn-primary my-1">Regenerate random</button>
+            <button class="btn btn-primary my-1">Regenerate random with cap</button>
             <h6>Random numbers</h6>
             <ol>
                 @foreach (var randomNumber in Model.RandomNumber)
