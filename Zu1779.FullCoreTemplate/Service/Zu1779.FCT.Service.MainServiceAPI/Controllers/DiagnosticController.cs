@@ -29,7 +29,7 @@
         /// </summary>
         [HttpGet]
         [Route("getversion")]
-        public JsonResult GetVersion()
+        public IActionResult GetVersion()
         {
             var assemblyName = Assembly.GetExecutingAssembly().GetName();
             logger.LogInformation($"Get version returned: {JsonConvert.SerializeObject(assemblyName)}");
@@ -42,6 +42,25 @@
         /// </summary>
         [HttpGet]
         [Route("getrpgversion")]
-        public JsonResult GetRpgVersion() => new JsonResult(characterEngine.GetVersion());
+        public IActionResult GetRpgVersion() => new JsonResult(characterEngine.GetVersion());
+
+        /// <summary>
+        /// Throw a generic critical exception.
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("testexception")]
+        public IActionResult TestException()
+        {
+            try
+            {
+                throw new ApplicationException("Test exception");
+            }
+            catch (Exception ex)
+            {
+                logger.LogCritical(ex, "Critical exception");
+                throw;
+            }
+        }
     }
 }
